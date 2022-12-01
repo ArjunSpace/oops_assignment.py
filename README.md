@@ -54,3 +54,26 @@ Q2. Where does an inheritance search look for an attribute?
           print(m.a)
           print(m.b)
           
+   Q7. What is the process for creating a class?
+   
+            class can be created by using the class keyword followed by class name 
+        Syntax:
+        class car:
+ 
+         # init method or constructor
+            def __init__(self, name, colour):
+                  self.name = name
+                  self.colour = colour
+ 
+         # Sample Method
+            def spects(self):
+                  print("car model is :", self.name)
+                  print("colour: ", self.colour)
+
+         veh = car("tiago","blue")
+         print(veh.name)
+         print(veh.colour)
+         veh.spects()
+ 
+                
+         
