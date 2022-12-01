@@ -1,5 +1,6 @@
 # oops_assignment.py
 Q1. What is the purpose of Python's OOP?
+      
       In Python, object-oriented Programming (OOPs) is a programming paradigm that 
     uses objects and classes in programming. It aims to implement real-world entities 
     like inheritance, polymorphisms, encapsulation, etc. in the programming. 
@@ -34,7 +35,7 @@ Q2. Where does an inheritance search look for an attribute?
        you to accept arguments to your class.More importantly, the __init__ method allows you
        to assign initial values to various attributes on your class instances.
        
-    Q6. What is the process for creating a class instance?
+   Q6. What is the process for creating a class instance?
     
             To create class instance or object of a class by calling the class name and should 
          include the attributes which were called in the init method of its class
