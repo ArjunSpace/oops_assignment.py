@@ -33,3 +33,23 @@ Q2. Where does an inheritance search look for an attribute?
         Python's __init__ method is called the initializer method. The __init__ method allows
        you to accept arguments to your class.More importantly, the __init__ method allows you
        to assign initial values to various attributes on your class instances.
+       
+    Q6. What is the process for creating a class instance?
+    
+            To create class instance or object of a class by calling the class name and should 
+         include the attributes which were called in the init method of its class
+         
+         Ex:
+         #creating class instance
+         class xyz:
+            def __init__(self, a, b):
+               self.a = a
+               self.b = b
+            def add_two(self):
+               print(self.a + self.b)
+                  
+          m = xyz(1,2)   #m is a objective of the class xyz
+          m.add_two()
+          print(m.a)
+          print(m.b)
+          
