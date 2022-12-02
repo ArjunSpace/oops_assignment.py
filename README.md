@@ -119,4 +119,12 @@ Q8. How would you define the superclasses of a class?
       it is from xyz2 class of test
   
 
+Q9. What is the relationship between classes and modules?
+
+        The module is a simple Python file that contains collections of classes, functions 
+    and global variables and with having a .py extension file. where as class is structure
+    for creating objects.
+    
+       modules may contain classes in it.
+    
         
