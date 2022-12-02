@@ -217,7 +217,7 @@ Q12. Where and how are instance attributes created?
       TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
       
           We can overload all existing operators but we can’t create a new operator. To perform operator overloading, 
-      Python provides some special function or magic       function that is automatically invoked when it is associated
+      Python provides some special function or magic function that is automatically invoked when it is associated
       with that particular operator. For example, when we use + operator, the magic method __add__ is automatically 
       invoked in which the operation for + operator is defined.
       
@@ -246,3 +246,17 @@ Q12. Where and how are instance attributes created?
 
        print(ob1.__add__(ob2))
        print(ob3.__add__(ob4))
+       
+Q15. When do you consider allowing operator overloading of your classes?
+
+Q16. What is the most popular form of operator overloading?
+
+Q17. What are the two most important concepts to grasp in order to comprehend Python OOP code?
+     
+         Both inheritance and polymorphism are fundamental concepts of object oriented programming. 
+     These concepts help us to create code that can be extended and easily maintainable.
+
+Q18. Describe three applications for exception processing.
+
+
+ 
