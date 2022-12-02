@@ -38,7 +38,7 @@ Q2. Where does an inheritance search look for an attribute?
    Q6. What is the process for creating a class instance?
     
             To create class instance or object of a class by calling the class name and should 
-         include the attributes which were called in the init method of its class
+         include the arguments which were called in the init method of its class
          
          Ex:
          #creating class instance
@@ -127,4 +127,10 @@ Q9. What is the relationship between classes and modules?
     
        modules may contain classes in it.
     
-        
+Q10. How do you make instances and classes?
+
+     classes can be made by using key word class followed by class name.
+     Ex:
+        class Employee:   # it is a class having name Employee
+     class instances can be created by following way:
+        Emp_details = Employee(#arguments declared in the init constructor)
