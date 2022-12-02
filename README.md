@@ -132,5 +132,48 @@ Q10. How do you make instances and classes?
      classes can be made by using key word class followed by class name.
      Ex:
         class Employee:   # it is a class having name Employee
+     
      class instances can be created by following way:
         Emp_details = Employee(#arguments declared in the init constructor)
+        By this way many instances can be created 
+        
+Q11. Where and how should be class attributes created?
+
+     
+     class sampleclass:
+         count = 0	 # class attribute
+
+	def increase(self):
+          sampleclass.count += 1
+
+     # Calling increase() on an object
+     s1 = sampleclass()
+     s1.increase()		
+     print(s1.count)
+
+    # Calling increase on one more
+    # object
+    s2 = sampleclass()
+    s2.increase()
+    print(s2.count)
+
+    s3 = sampleclass()
+    s3.increase()
+    print(s3.count)
+    print(sampleclass.count)
+    
+    and also created by using __init__ method 
+    
+    # instance attributes.
+    class emp:
+	def __init__(self):
+		self.name = 'xyz'
+		self.salary = 4000
+
+	def show(self):
+		print(self.name)
+		print(self.salary)
+
+    e1 = emp()
+    e1.show()
+
