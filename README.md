@@ -162,18 +162,31 @@ Q11. Where and how should be class attributes created?
     print(s3.count)
     print(sampleclass.count)
     
-    and also created by using __init__ method 
+     
+Q12. Where and how are instance attributes created?
+
+     instance attributes are to be created inside a class by using 
+     self 
+     class emp:
+          def __init__(self, name, salary):
+              self.name = name
+              self.salary = salary
+  
+          def show(self):
+              print(self.name)
+              print(self.salary)
+  
+     e1 = emp("xyz", 10000)
+     e1.show()
+     
+ Q13. What does the term "self" in a Python class mean?
     
-    # instance attributes.
-    class emp:
-	def __init__(self):
-		self.name = 'xyz'
-		self.salary = 4000
-
-	def show(self):
-		print(self.name)
-		print(self.salary)
-
-    e1 = emp()
-    e1.show()
-
+          self represents the instance of the class. By using the “self”  we can access the attributes 
+      and methods of the class in python. It binds the attributes with the given arguments.
+      The reason to use self. is because Python does not use the @ syntax to refer to instance attributes.
+      Python decided to do methods in a way that makes the instance to which the method belongs be passed
+      automatically, but not received automatically: the first parameter of methods is the instance of the
+      method is called on.
+      
+          Self is always pointing to Current Object.Self is the first argument to be passed in Constructor and Instance Method.
+      self is not a keyword we can use anything inplace of self but self is used because of best programming practice
