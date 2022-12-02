@@ -83,5 +83,40 @@ Q8. How would you define the superclasses of a class?
     known as the parent class or base class.
         
      Ex:
-        
+     class xyz:
+         def __init__(self, a, b, c):
+            self.a = a
+            self.b = b
+            self.c = c
+
+         def test(self):
+            print("it is from xyz class of test")
+
+     class xyz1(xyz):
+       def __init__(self, p, q, r):
+            self.p = p
+            self.q = q
+            self.r = r 
+       def test1(self):
+            print("it is from xyz1 class of test")
+
+     class xyz2(xyz1):
+
+         def test2(self):
+            print("it is from xyz2 class of test")
+
+
+      q = xyz2(1,2,3)
+
+      q.a
+      q.test()
+      q.test1()
+      q.test2()
+
+      o/p:
+      it is from xyz class of test
+      it is from xyz1 class of test
+      it is from xyz2 class of test
+  
+
         
