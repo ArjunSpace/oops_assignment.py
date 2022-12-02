@@ -190,3 +190,59 @@ Q12. Where and how are instance attributes created?
       
           Self is always pointing to Current Object.Self is the first argument to be passed in Constructor and Instance Method.
       self is not a keyword we can use anything inplace of self but self is used because of best programming practice
+      
+ Q14. How does a Python class handle operator overloading?
+ 
+          Consider that we have two objects which are a physical representation of a class (user-defined data type) 
+      and we have to add two objects with binary ‘+’ operator it throws an error, because compiler don’t know 
+      how to add two objects
+      
+      Ex:
+         class Point:
+             def __init__(self, x=0, y=0):
+                 self.x = x
+                 self.y = y
+
+         p1 = Point(1, 2)
+         p2 = Point(2, 3)
+         print(p1+p2)
+        
+      o/p:
+      TypeError                                 Traceback (most recent call last)
+      <ipython-input-11-117bb3bdfa23> in <module>
+      7 p1 = Point(1, 2)
+      8 p2 = Point(2, 3)
+      ----> 9 print(p1+p2)
+
+      TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
+      
+          We can overload all existing operators but we can’t create a new operator. To perform operator overloading, 
+      Python provides some special function or magic       function that is automatically invoked when it is associated
+      with that particular operator. For example, when we use + operator, the magic method __add__ is automatically 
+      invoked in which the operation for + operator is defined.
+      
+      
+      class over_load:
+          def __init__(self, a):
+              self.a = a
+ 
+      # adding two objects
+          def __add__(self, o):
+              return self.a + o.a
+      ob1 = over_load(1)
+      ob2 = over_load(2)
+      ob3 = over_load("Big")
+      ob4 = over_load("Data")
+ 
+      #print(ob1 + ob2)
+      #print(ob3 + ob4)
+
+      # Actual working when Binary Operator is used.
+
+       print(over_load.__add__(ob1 , ob2))
+       print(over_load.__add__(ob3,ob4))
+
+       #And can also be Understand as :
+
+       print(ob1.__add__(ob2))
+       print(ob3.__add__(ob4))
