@@ -83,7 +83,7 @@ Q8. How would you define the superclasses of a class?
     known as the parent class or base class.
         
      Ex:
-     class xyz:
+     class xyz:     #xyz class is super class
          def __init__(self, a, b, c):
             self.a = a
             self.b = b
