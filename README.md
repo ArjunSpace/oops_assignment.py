@@ -76,12 +76,12 @@ Q2. Where does an inheritance search look for an attribute?
          veh.spects()
  
                 
-    Q8. How would you define the superclasses of a class?
+Q8. How would you define the superclasses of a class?
       
-            A superclass is the class from which many subclasses can be created. 
-        The subclasses inherit the characteristics of a superclass. The superclass is also               
-        known as the parent class or base class.
+      A superclass is the class from which many subclasses can be created. 
+    The subclasses inherit the characteristics of a superclass. The superclass is also               
+    known as the parent class or base class.
         
-        Ex:
+     Ex:
         
         
