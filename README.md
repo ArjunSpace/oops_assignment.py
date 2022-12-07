@@ -258,5 +258,76 @@ Q17. What are the two most important concepts to grasp in order to comprehend Py
 
 Q18. Describe three applications for exception processing.
 
+         Exceptions: Exceptions are raised when the program is syntactically correct, but the code 
+     resulted in an error. This error does not stop the execution of the program, however, 
+     it changes the normal flow of the program.
+     
+     Try with Else Clause
+         In python, you can also use the else clause on the try-except block which must be present after
+     all the except clauses. The code enters the else block only if the try clause does not raise an exception.
+
+     Example: Try with else clause
 
  
+     def AbyB(a , b):
+         try:
+             c = ((a+b) / (a-b))
+         except ZeroDivisionError:
+             print ("a/b result in 0")
+         else:
+             print (c)
+ 
+         AbyB(2.0, 3.0)
+         AbyB(3.0, 3.0)
+         
+	 Output:
+
+         -5.0
+          a/b result in 0 
+
+      Finally Keyword in Python
+      	Python provides a keyword finally, which is always executed after the try and except blocks. 
+      The final block always executes after normal termination of try block or after try block terminates due to some exception.
+     
+ 
+Q19. What happens if you don't do something extra to treat an exception?
+ 
+          Even if the syntax of a statement or expression is correct, it may still cause an error when executed. 
+       Python exceptions are errors that are detected during execution and are not unconditionally fatal. 
+       An exception object is created when a Python script raises an exception. If the script explicitly doesn't
+       handle the exception, the program will be forced to terminate abruptly.
+       
+Q20. What are your options for recovering from an exception in your script?
+
+         A single try statement can have multiple except statements. This is useful when the try block contains statements 
+     that may throw different types of exceptions.can also provide a generic except clause, which handles any exception. 
+     After the except clause(s), you can include an else-clause. The code in the else-block executes if the code in the
+     try: block does not raise an exception.
+
+Q21. Describe two methods for triggering exceptions in your script.
+
+     triggering exceptions in python can be done by 
+     1. try except statements
+     2. raise statement :The raise statement allows the programmer to force a specified exception to occur
+     
+     Ex:
+        raise NameError('HiThere')
+        Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        NameError: HiThere
+	
+Q22. Identify two methods for specifying actions to be executed at termination time, regardless of whether or not an exception exists.
+Q23. What is the purpose of the try statement?
+
+         The try block lets you test a block of code for errors.
+     When an error occurs, or exception as we call it, Python will normally stop and generate an error message.
+     These exceptions can be handled using the try statement:
+
+     Example
+     The try block will generate an exception, because x is not defined:
+
+      try:
+      	print(x)
+      except:
+      	print("An exception occurred")
+     			   
