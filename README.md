@@ -330,4 +330,317 @@ Q23. What is the purpose of the try statement?
       	print(x)
       except:
       	print("An exception occurred")
-     			   
+ 
+ Q24. What are the two most popular try statement variations?
+ 
+      Syntax: 
+      try:
+      	# Some Code
+      except:
+     	 # Executed if error in the
+      	 # try block
+ 
+	First, the try clause is executed i.e. the code between try and except clause.
+     If there is no exception, then only the try clause will run, except the clause is finished.
+     If any exception occurs, the try clause will be skipped and except clause will run.
+     If any exception occurs, but the except clause within the code doesn’t handle it,
+       it is passed on to the outer try statements. 
+     If the exception is left 	unhandled, then the execution stops.
+     A try statement can have more than one except clause
+	
+     Code 1: No exception, so the try clause will run. 
+ 
+     def divide(x, y):
+     	try:
+           # Floor Division : Gives only Fractional Part as Answer
+           result = x // y
+           print("Yeah ! Your answer is :", result)
+           except ZeroDivisionError:
+           print("Sorry ! You are dividing by zero ")
+  
+     divide(3, 2)
+     Output : 
+    ('Yeah ! Your answer is :', 1)
+    
+    Code 1: There is an exception so only except clause will run. 
+ 
+    def divide(x, y):
+    	try:
+           # Floor Division : Gives only Fractional Part as Answer
+           result = x // y
+           print("Yeah ! Your answer is :", result)
+       except ZeroDivisionError:
+           print("Sorry ! You are dividing by zero ")
+ 
+    divide(3, 0)
+    Output : 
+    Sorry ! You are dividing by zero
+ 
+    Else Clause
+    In python, you can also use the else clause on the try-except block which must be present
+    after all the except clauses. The code enters the else block only if the try clause does 
+    not raise an exception.
+    Syntax:
+
+    try:
+    # Some Code
+    except:
+    # Executed if error in the
+    # try block
+    else:
+    # execute if no exception
+   
+Q25. What is the purpose of the raise statement?
+   
+     The raise keyword is used to raise an exception.
+     Ex:
+     x = -1
+     if x < 0:
+     raise Exception("Sorry, no numbers below zero")
+     
+Q26. What does the assert statement do, and what other statement is it like?
+
+     The assert keyword is used when debugging code.
+     The assert keyword lets you test if a condition in your code returns True, if not, the program
+     will raise an AssertionError.You can write a message to be written if the code returns False
+     
+     Ex:
+       x = "hello"
+       #if condition returns True, then nothing happens:
+       assert x == "hello"
+       #if condition returns False, AssertionError is raised:
+       assert x == "goodbye"
+       
+Q27. What is the purpose of the with/as argument, and what other statement is it like?
+
+	with statement is used in exception handling to make the code cleaner and much more readable.
+	It simplifies the management of common resources like file streams. following code is example on 
+	how the use of with statement makes code cleaner. 
+
+	# file handling
+
+	# 1) without using with statement
+	file = open('file_path', 'w')
+	file.write('hello world !')
+	file.close()
+
+	# 2) without using with statement
+	file = open('file_path', 'w')
+	try:
+	    file.write('hello world')
+	finally:
+	    file.close()
+
+	# using with statement
+	with open('file_path', 'w') as file:
+	    file.write('hello world !')
+	    
+Q28. What are *args, **kwargs?
+
+     *args:
+	The special syntax *args in function definitions in python is used to pass a variable number of arguments
+     to a function. It is used to pass a non-key worded, variable-length argument list. 
+
+	The syntax is to use the symbol * to take in a variable number of arguments; by convention, it is often used
+      with the word args.What *args allows you to do is take in more arguments than the number of formal arguments 
+      that you previously defined. With *args, any number of extra    arguments can be tacked on to your current formal
+      parameters (including zero extra arguments).For example, we want to make a multiply function that takes any number 
+      of arguments and is able to multiply them all together. It can be done using *args.Using the *, the variable that 
+      we associate with the * becomes an iterable meaning you can do things like iterate over it, run some higher-order 
+      functions such as map and filter, etc.
+      
+      Ex:
+      def myFun(*argv):
+         for arg in argv:
+             print(arg)
+      myFun('big' , 'data')
+      
+      **kwargs:
+	    The special syntax **kwargs in function definitions in python is used to pass a keyworded, variable-length
+	argument list. We use the name kwargs with the double star. The reason is that the double star allows us to pass
+	through keyword arguments (and any number of them).
+
+	    A keyword argument is where you provide a name to the variable as you pass it into the function.
+	One can think of the kwargs as being a dictionary that maps each keyword to the value that we pass alongside it.
+	That is why when we iterate over the kwargs there doesn’t seem to be any order in which they were printed out.
+	
+	Ex:
+	
+        def myFun(**kwargs):
+            for key, value in kwargs.items():
+            print(key, value)
+	    
+	myFun(first='Big',last='Data')
+	
+Q29. How can I pass optional or keyword parameters from one function to another?
+	
+         In Python, when we define functions with default values for certain parameters, 
+     it is said to have its arguments set as an option for the user. Users can   either pass their values or can 
+     pretend the function to use theirs default values which are specified.In this way, the user can call the function 
+     by either passing those optional parameters or just passing the required parameters. 
+
+     There are two main ways to pass optional parameters in python 
+
+	Without using keyword arguments.
+	By using keyword arguments.
+	Passing without using keyword arguments
+	
+	Some main point to be taken care while passing without using keyword arguments is :
+
+        The order of parameters should be maintained i.e. the order in which parameters are defined in function
+	should be maintained while calling the function.
+	
+	The values for the non-optional parameters should be passed otherwise it will throw an error.
+	
+	The value of the default arguments can be either passed or ignored.
+	
+	Example 1:
+
+
+	# Here b is predefined and hence is optional.
+	def func(a, b=1098):
+	    return a+b
+
+
+	print(func(2, 2))
+
+	# this 1 is represented as 'a' in the function and
+	# function uses the default value of b
+	print(func(1))
+	Output:
+
+	4
+	1099
+
+Q30. What are Lambda Functions?
+
+         A lambda function is a small anonymous function.
+      A lambda function can take any number of arguments, but can only have one expression.
+
+	Syntax
+	lambda arguments : expression
+	The expression is executed and the result is returned:
+
+	Example
+	Add 10 to argument a, and return the result:
+
+	x = lambda a : a + 10
+	print(x(5))
+ 
+	Lambda functions can take any number of arguments:
+
+	Example
+	Multiply argument a with argument b and return the result:
+
+	x = lambda a, b : a * b
+	print(x(5, 6))    
+	
+Q31. Explain Inheritance in Python with an example?
+
+	One of the core concepts in object-oriented programming (OOP) languages is inheritance.
+     It is a mechanism that allows you to create a hierarchy of classes that share a set of properties 
+     and methods by deriving a class from another class. Inheritance is the capability of one class to
+     derive or inherit the properties from another class. 
+
+	class Person:
+
+	    # Constructor
+	    def __init__(self, name):
+		self.name = name
+	    # To get name
+	    def getName(self):
+		return self.name
+	   # To check if this person is an employee
+	    def isEmployee(self):
+		return False
+	# Inherited or Subclass (Note Person in bracket)	
+	class Employee(Person):
+	    def isEmployee(self):
+		return True
+
+	emp = Person("Arjun")  # An Object of Person
+	print(emp.getName(), emp.isEmployee())
+
+	emp = Employee("Vamshi")  # An Object of Employee
+	print(emp.getName(), emp.isEmployee())
+	
+	Output: 
+	Arjun False
+	Vamshi True
+
+ Q32. Suppose class C inherits from classes A and B as class C(A,B).Classes A and B both have their own versions of method func(). If we call func() from an object of class C, which version gets invoked?
+ 
+	class A:
+	  def test(self):
+	    print("it is from A class ")
+	class B:
+	  def test(self):
+	    print("it is from B class ")
+	class C(A,B):
+	  pass
+	obj = C()
+	obj.test() 
+
+	o/p:
+	it is from A class 
+	
+	#It can be inherited another way
+	class A:
+	  def test(self):
+	    print("it is from A class ")
+	class B:
+	  def test(self):
+	    print("it is from B class ")
+	class C(B,A):
+	  pass
+
+	obj = C()
+	obj.test() 
+
+	o/p:
+	it is from B class
+	
+Q33. Which methods/functions do we use to determine the type of instance and inheritance?
+
+	Two built-in functions isinstance() and issubclass() are used to check inheritances.
+     The function isinstance() returns True if the object is an instance of the class or other
+     classes derived from it.Each and every class in Python inherits from the base class object.
+     
+     Similarly, issubclass() is used to check for class inheritance.
+     
+Q34.Explain the use of the 'nonlocal' keyword in Python.
+
+	The nonlocal keyword is used to work with variables inside nested functions, where the variable 
+    should not belong to the inner function.
+    Use the keyword nonlocal to declare that the variable is not local.
+    
+    Ex:
+	def myfunc1():
+	  x = "Big"
+	  def myfunc2():
+	    nonlocal x
+	    #x = "Data"
+	  myfunc2() 
+	  return x
+
+	print(myfunc1())
+	
+	o/p:
+	Big
+	
+Q35. What is the global keyword?
+
+            The global keyword is used to create global variables from a no-global scope, e.g. inside a function.
+	Declare a global variable inside a function, and use it outside the function:
+
+	#create a function:
+	def myfunction():
+	  global x
+	  x = "hello"
+	myfunction()
+
+	#x should now be global, and accessible in the global scope.
+	print(x)
+
+        o/p:
+	hello
