@@ -249,7 +249,44 @@ Q12. Where and how are instance attributes created?
        
 Q15. When do you consider allowing operator overloading of your classes?
 
+         Consider that we have two objects which are a physical representation of a class (user-defined data type) 
+     and we have to add two objects with binary ‘+’ operator it throws an error, because compiler don’t know how to add two objects.
+     So we define a method for an operator and that process is called operator overloading.
+     
+     	We can overload all existing operators but we can’t create a new operator. To perform operator overloading, 
+     Python provides some special function or magic function that is automatically invoked when it is associated with that particular operator. 
+     For example, when we use + operator, the magic method __add__ is automatically invoked in which the operation for + operator is defined.
+
+
 Q16. What is the most popular form of operator overloading?
+
+     A very popular and convenient example is the Addition (+) operator.
+     
+     class over_load:
+          def __init__(self, a):
+              self.a = a
+ 
+      # adding two objects
+          def __add__(self, o):
+              return self.a + o.a
+      ob1 = over_load(1)
+      ob2 = over_load(2)
+      ob3 = over_load("Big")
+      ob4 = over_load("Data")
+ 
+      #print(ob1 + ob2)
+      #print(ob3 + ob4)
+
+      # Actual working when Binary Operator is used.
+
+       print(over_load.__add__(ob1 , ob2))
+       print(over_load.__add__(ob3,ob4))
+
+       #And can also be Understand as :
+
+       print(ob1.__add__(ob2))
+       print(ob3.__add__(ob4))
+     
 
 Q17. What are the two most important concepts to grasp in order to comprehend Python OOP code?
      
@@ -316,7 +353,15 @@ Q21. Describe two methods for triggering exceptions in your script.
         File "<stdin>", line 1, in <module>
         NameError: HiThere
 	
-Q22. Identify two methods for specifying actions to be executed at termination time, regardless of whether or not an exception exists.
+Q22. Identify two methods for specifying actions to be executed at termination time, regardless of 
+     whether or not an exception exists.
+
+         Finally block always executes irrespective of an exception being thrown or not. The final keyword allows
+     you to create a block of code that follows a try-catch block.
+
+     Finally, clause is optional. It is intended to define clean-up actions which should be that executed in all conditions.
+
+
 Q23. What is the purpose of the try statement?
 
          The try block lets you test a block of code for errors.
